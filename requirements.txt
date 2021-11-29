@@ -3,3 +3,4 @@ psycopg2-binary>=2.8
 nltk==3.6.5
 contractions==0.0.58
 pycountry==20.7.3
+requests==2.26.0
