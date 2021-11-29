@@ -1,4 +1,5 @@
 import json
+import string
 import contractions
 from pycountry import languages
 
@@ -34,7 +35,8 @@ def tokenizer(request):
         text = contractions.fix(text)
 
     words = word_tokenize(text)
-    tokens = words # TODO: remove unnecessary punctuation
+    punctuation = [ char for char in string.punctuation ]
+    tokens = [ word for word in words if word not in punctuation ]
 
     res_data = {'tokens': tokens, 'lang': lang}
     return HttpResponse(json.dumps(res_data))
