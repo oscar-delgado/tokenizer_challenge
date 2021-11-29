@@ -75,7 +75,9 @@ WSGI_APPLICATION = 'tokenizer_challenge.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {}
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+    }
 }
 
 

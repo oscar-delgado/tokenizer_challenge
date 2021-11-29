@@ -6,6 +6,7 @@ from nltk.corpus import stopwords
 
 def detect_language(text):
     """
+    Tries to detect the language of a text. If it fails, returns 'unknown'
     """
     lang_stopwords = {lang: set(stopwords.words(lang)) for lang in stopwords.fileids()}
 
