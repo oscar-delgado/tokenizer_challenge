@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'k#%=@7np&a@h_i&xq!a0aa&ff-5c&gtsdh0z8vjuh$5hp^s0%1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -116,3 +116,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# Prod settings
+try:
+    from tokenizer_challenge.prod_settings import *
+except ImportError:
+    pass
+
+# Docker settings
+try:
+    from tokenizer_challenge.docker_settings import *
+except ImportError:
+    pass
