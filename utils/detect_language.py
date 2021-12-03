@@ -1,5 +1,7 @@
 from pycountry import languages as lang
 
+import nltk
+nltk.download('stopwords')
 from nltk import wordpunct_tokenize
 from nltk.corpus import stopwords
 

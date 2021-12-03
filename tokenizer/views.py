@@ -6,7 +6,9 @@ from pycountry import languages
 from django.http import HttpResponse
 from django.http.response import HttpResponseBadRequest
 
-from nltk.tokenize import word_tokenize
+import nltk
+nltk.download('punkt')
+from nltk import word_tokenize
 
 from utils.error_object import error_object
 from utils.detect_language import detect_language
